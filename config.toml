@@ -1,4 +1,4 @@
-baseurl = "https://goldmaedchen.github.io/goldmaedchen/public/"
+baseurl = "https://goldmaedchen.github.io/goldmaedchen/"
 title = "goldmädchen graphic design vienna"
 theme = "hugo-creative-portfolio-theme"
 languageCode = "en-us"

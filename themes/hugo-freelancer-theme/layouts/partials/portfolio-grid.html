@@ -1,25 +1,42 @@
 {{ "<!-- Portfolio Grid Section -->" | safeHTML }}
 <section id="portfolio">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>{{ with .Site.Params.portfolio.title }}{{.}}{{end}}</h2>
-                <hr class="star-primary">
-            </div>
-        </div>
-        <div class="row">
-            {{ range $.Site.Data.projects }}
-            <div class="col-sm-4 portfolio-item">
-                <a href="#portfolioModal{{ .modalID }}" class="portfolio-link" data-toggle="modal">
-                    <div class="caption">
-                        <div class="caption-content">
-                            <i class="fa fa-search-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="img/portfolio/{{ .img }}" class="img-responsive">
-                </a>
-            </div>
-            {{ end }}
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>{{ with .Site.Params.portfolio.title }}{{.}}{{end}}</h2>
+				<hr class="star-primary" />
+				servus
+			</div>
+		</div>
+
+		<div class="grid">
+			<div class="row">
+				{{ range (where .Data.Pages "Section" "portfolio") }}
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
+						<div class="box-masonry">
+							{{ if and (isset .Params "image") .Params.image }}
+								{{ if eq .Params.showonlyimage true }}
+								<a href="#portfolioModal{{ .Params.modalID }}" class="portfolio-link box-masonry-image with-hover-overlay" data-toggle="modal">
+								{{ else }}
+								<a href="#portfolioModal{{ .Params.modalID }}" class="portfolio-link box-masonry-image with-hover-overlay with-hover-icon" data-toggle="modal">
+								{{ end }}
+									<img src="{{ .Params.image }}" alt="" class="img-responsive">
+								</a>
+							{{ end }}
+							{{ if eq .Params.showonlyimage true }}
+							<div class="box-masonry-hover-text-header">
+							{{ else }}
+							<div class="box-masonry-text">
+							{{ end }}
+								<h4><a href="#portfolioModal{{ .Params.modalID }}" class="portfolio-link" data-toggle="modal">{{ .Title }}</a></h4>
+								<div class="box-masonry-desription">
+									<p>{{ .Summary }}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				{{ end }}
+			</div>
+		</div>
+	</div>
 </section>

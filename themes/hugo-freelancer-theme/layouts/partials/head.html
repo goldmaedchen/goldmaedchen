@@ -9,9 +9,14 @@
 <link href="{{ .Site.BaseURL }}css/bootstrap.min.css" rel="stylesheet">
 {{ "<!-- Custom CSS -->" | safeHTML }}
 <link href="css/freelancer.css" rel="stylesheet">
-{{ range .Site.Params.custom_css }}
-<link rel="stylesheet" href="{{ . | absURL }}">
+<!-- Theme stylesheet, if possible do not edit this stylesheet -->
+{{ with .Site.Params.style }}
+  <link href="{{ printf "css/style.%s.css" . | absURL }}" rel="stylesheet" id="theme-stylesheet">
+{{ else }}
+  <link href="{{ "css/style.default.css" | absURL }}" rel="stylesheet" id="theme-stylesheet">
 {{ end }}
+<!-- Custom stylesheet - for your changes -->
+<link href="{{ "css/custom.css" | absURL }}" rel="stylesheet">
 {{ "<!-- Custom Fonts -->" | safeHTML }}
 <link href="{{ .Site.BaseURL }}css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">

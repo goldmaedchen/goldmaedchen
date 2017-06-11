@@ -20,7 +20,7 @@
 								{{ else }}
 								<a href="#portfolioModal{{ .Params.modalID }}" class="portfolio-link box-masonry-image with-hover-overlay with-hover-icon" data-toggle="modal">
 								{{ end }}
-									<img src="{{ .Params.image }}" alt="" class="img-responsive">
+									<img src="img{{ .URL }}{{ .Params.image }}" alt="" class="img-responsive">
 								</a>
 							{{ end }}
 							{{ if eq .Params.showonlyimage true }}

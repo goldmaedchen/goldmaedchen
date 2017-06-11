@@ -15,8 +15,11 @@
 						<h2>{{ .Title }}</h2>
 						<hr class="star-primary">
 						servus modals
-						<img src="img/portfolio/{{ .Params.image }}" class="img-responsive img-centered" alt="">
+						{{ if and (isset .Params "image") .Params.image }}
+						<img src="img{{ .URL }}{{ .Params.image }}" class="img-responsive img-centered" alt="">
+						{{ end }}
 						<p>{{ .Description | markdownify }}</p>
+						<p>{{ .Content | markdownify }}</p>
 						<ul class="list-inline item-details">
 							<!--
 							<li>{{ with $.Site.Params.portfolio.modal.client }}{{.}}{{ end }}:

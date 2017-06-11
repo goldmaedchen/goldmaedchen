@@ -2,7 +2,7 @@
 date = "2016-11-05T19:41:01+05:30"
 title = ""
 draft = false
-image = "img/portfolio/business-card-26.jpg"
+image = "1.jpg"
 showonlyimage = true
 weight = 1
 modalID = 2
@@ -14,9 +14,9 @@ modalID = 2
 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
 
 <div class="owl-carousel" id="main-slider">
-	<div class="item"><img src="1.jpg" class="img-responsive" ></div>
-	<div class="item"><img src="2.jpg" class="img-responsive" ></div>
-	<div class="item"><img src="3.jpg" class="img-responsive" ></div>
+	<div class="item"><img src="img/portfolio/work2/1.jpg" class="img-responsive" ></div>
+	<div class="item"><img src="img/portfolio/work2/2.jpg" class="img-responsive" ></div>
+	<div class="item"><img src="img/portfolio/work2/3.jpg" class="img-responsive" ></div>
 </div>
 
 A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.

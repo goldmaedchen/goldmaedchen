@@ -37,7 +37,7 @@ function carousels() {
 function masonry() {
 
     var $grid = $('.grid').masonry({
-        itemSelector: ".masonry-item"
+        itemSelector: ".masonry-item",
     });
 
     $grid.imagesLoaded().progress(function () {
